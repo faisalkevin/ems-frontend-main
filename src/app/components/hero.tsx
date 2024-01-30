@@ -51,7 +51,7 @@ export default function Hero() {
             </Text>
           </Heading>
           <Text color={'gray.500'}>
-            We help you broswse your favorite events and streamline your booking experience
+            We help you browse your favorite events and streamline your booking experience
           </Text>
           <Stack spacing={{ base: 4, sm: 6 }} direction={{ base: 'column', sm: 'row' }}>
             <Link

@@ -8,6 +8,7 @@ import Cookies from "universal-cookie";
 import { Link } from "@chakra-ui/next-js";
 import ResponseModal from "./responseModal";
 import { LuX } from "react-icons/lu";
+import { validAuthResponse } from "../../../types/custom-types";
 
 // const dummySuccessResponse = {
 //     isSuccess: true,
@@ -39,7 +40,7 @@ export default function Register() {
         setLoading(true)
         setToken(cookies.get('token'))
         setLoading(false)
-    }, [token])
+    }, [cookies, token])
 
     const formik = useFormik({
         initialValues: {

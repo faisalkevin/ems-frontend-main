@@ -56,8 +56,9 @@ export default function NavBar() {
             href={'/'}
             textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
             fontFamily={'heading'}
-            color={useColorModeValue('gray.800', 'white')}>
-            Logo
+            color={useColorModeValue('gray.800', 'white')}
+            fontWeight={'black'}>
+            Ngivent!
           </Button>
 
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
@@ -70,14 +71,14 @@ export default function NavBar() {
           justify={'flex-end'}
           direction={'row'}
           spacing={6}>
-          <Button as={'a'} fontSize={'sm'} fontWeight={400} variant={'link'} href={'/login'}>
+          <Button as={'a'} fontSize={'sm'} fontWeight={600} variant={'link'} href={'/login'}>
             Sign In
           </Button>
           <Button
             as={'a'}
             display={{ base: 'none', md: 'inline-flex' }}
             fontSize={'sm'}
-            fontWeight={600}
+            fontWeight={800}
             color={'white'}
             bg={'gray.400'}
             href={'/register'}
@@ -111,7 +112,7 @@ const DesktopNav = () => {
                 p={2}
                 href={navItem.href ?? '/reviewandrating'}
                 fontSize={'sm'}
-                fontWeight={500}
+                fontWeight={800}
                 color={linkColor}
                 _hover={{
                   textDecoration: 'none',

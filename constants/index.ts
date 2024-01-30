@@ -60,10 +60,10 @@ export const kumpulanKategori = [
             "Teknologi"
         ];
 
-export const generateCarImageUrl = (car: EventProps, angle?: string) => {
+export const generateCarImageUrl = (event: EventProps, angle?: string) => {
             const url = new URL('https://cdn.imagin.studio/getimage');
         
-            const { make, year, model } = car;
+            const { make, year, model } = event;
         
             url.searchParams.append('customer', 'hrjavascript-mastery');
             url.searchParams.append('make', make)
@@ -89,3 +89,13 @@ export const generateCarImageUrl = (car: EventProps, angle?: string) => {
       
       return result;
       }
+
+      export const updateSearchParams = (type: string, value: string) => {
+        const searchParams = new URLSearchParams(window.location.search);
+            
+        searchParams.set(type, value)
+    
+          const newPathName = `${window.location.pathname}?${searchParams.toString()}`
+    
+          return newPathName;
+    }

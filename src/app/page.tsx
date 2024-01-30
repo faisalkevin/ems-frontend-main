@@ -1,10 +1,10 @@
 import { Box, Heading } from '@chakra-ui/react'
-import HeroSection from './components/hero'
+import Hero from './components/Hero';
 import SearchBar from './components/SearchBar'
 import { fetchEvent } from '../../constants'
 import EventCard from './components/EventCard';
 
-export default async function Home( searchParams: { manufacturer: any; year: any; fuel: any; limit: any; model: any; } ) {
+export default async function Home( searchParams: { manufacturer: string; year: number; fuel: string; limit: number; model: string; } ) {
 
   const allEvent = await fetchEvent({
     manufacturer: searchParams.manufacturer || '',
@@ -18,12 +18,13 @@ export default async function Home( searchParams: { manufacturer: any; year: any
 
   return (
     <main className='overFlow-hidden'>
-      <HeroSection/>
+      <Hero/>
       <div className="mt-12 padding-x padding-y max-width" id="discover">
         <div className='home__text-container'>
           <h1 className="text-4xl font-extrabold">Events</h1>
           <p className='font-extrabold'>Explore events you might like</p>
         </div>
+
         <div className="home__filters">
           <SearchBar />
         </div>
@@ -36,6 +37,7 @@ export default async function Home( searchParams: { manufacturer: any; year: any
               <EventCard event={event}/>
               ))}
             </div>
+
           </section>
         ): (
           <div className="home__error-container">

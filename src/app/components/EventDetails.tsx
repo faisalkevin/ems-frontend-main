@@ -8,6 +8,8 @@ import React from 'react'
 import { Dialog, Transition } from '@headlessui/react';
 import { generateCarImageUrl } from '../../../constants';
 import { url } from 'inspector';
+import CustomButton from './CustomButton';
+import { Link } from '@chakra-ui/react';
 
 interface EventDetailProps {
     isOpen: boolean;
@@ -63,18 +65,6 @@ const EventDetails = ({isOpen, closeModal, event}: EventDetailProps) => {
                                 <div className='relative w-full h-40 bg-pattern bg-cover bg-center rounded-lg'>
                                     <Image src={generateCarImageUrl(event)} alt="car model" fill priority className="object-contain" />
                                 </div>
-                                <div className='flex gap-3 '>
-                                    <div className='flex-1 relative w-full h-40 bg-primary-blue-100 rounded-lg'>
-                                    <Image src={generateCarImageUrl(event, '29')} alt="car model" fill priority className="object-contain" />
-                                    </div>
-                                    <div className='flex-1 relative w-full h-40 bg-primary-blue-100 rounded-lg'>
-                                    <Image src={generateCarImageUrl(event, '33')} alt="car model" fill priority className="object-contain" />
-                                    </div>
-                                    <div className='flex-1 relative w-full h-40 bg-primary-blue-100 rounded-lg'>
-                                    <Image src={generateCarImageUrl(event, '13')} alt="car model" fill priority className="object-contain" />
-                                    </div>
-
-                                </div>
                             </div>
 
                             <div className='flex-1 flex flex-col gap-2'>
@@ -90,6 +80,17 @@ const EventDetails = ({isOpen, closeModal, event}: EventDetailProps) => {
                                         </div>
                                     ))}
                                 </div>
+                            </div>
+                            <div className='flex items-center justify-center w-full py-[16px] rounded-full bg-primary-blue'>
+                                <a href='/login' className='text-white text-[14px] leading=[17px] font-bold'>
+                                Buy Ticket</a>
+                                {/* <CustomButton
+                                title='Buy Ticket'
+                                btnType='submit'
+                                href='/login'
+                                containerStyles='w-full py-[16px] rounded-full bg-primary-blue'
+                                textStyles='text-white text-[14px] leading=[17px] font-bold'
+                                /> */}
                             </div>
                         </Dialog.Panel>
                 </Transition.Child>    

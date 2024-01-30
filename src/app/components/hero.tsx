@@ -17,7 +17,7 @@ import {
   Link,
 } from '@chakra-ui/react'
 
-export default function HeroSection() {
+export default function Hero() {
   return (
     <Container maxW={'7xl'}>
       <Stack

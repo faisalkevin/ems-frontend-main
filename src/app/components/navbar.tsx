@@ -1,5 +1,5 @@
 import { Link, Container } from "@chakra-ui/react";
-
+import NextLink from "next/link";
 'use client'
 
 import {
@@ -52,7 +52,8 @@ export default function NavBar() {
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-          <Button
+          <Button as='a'
+            href={'/'}
             textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
             fontFamily={'heading'}
             color={useColorModeValue('gray.800', 'white')}>
